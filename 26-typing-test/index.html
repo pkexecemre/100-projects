@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30 second typing test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">Speed drill</p>
+        <h1>Thirty seconds</h1>
+      </div>
+      <p class="hint">Type the passage. Punctuation and capitals count.</p>
+    </header>
+
+    <section class="card">
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Time</span>
+          <span class="stat-value"><strong id="time">30</strong><span class="unit">s</span></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">WPM</span>
+          <span class="stat-value"><strong id="wpm">0</strong></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Accuracy</span>
+          <span class="stat-value"><strong id="accuracy">100</strong><span class="unit">%</span></span>
+        </div>
+      </div>
+
+      <p id="passage" class="passage" aria-label="Passage to type"></p>
+
+      <label class="sr-only" for="input">Your typing</label>
+      <textarea id="input" rows="3" spellcheck="false" autocomplete="off"
+                autocapitalize="off" placeholder="The clock starts with your first keystroke..."
+                disabled></textarea>
+
+      <div class="actions">
+        <button id="start" class="primary" type="button">Start test</button>
+        <p id="result" class="result" aria-live="polite">
+          Press Start, then type. The clock starts on your first keystroke.
+        </p>
+      </div>
+    </section>
+
+    <p class="foot">WPM counts correct characters, five to a word. Paste is disabled so the score means something.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

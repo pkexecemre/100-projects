@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Markdown - live preview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">Markdown lab</p>
+        <h1>Mini preview</h1>
+      </div>
+      <p class="hint">Headings, bold, italic, code, lists and links. Rendered as you type.</p>
+    </header>
+
+    <section class="editor-grid">
+      <div class="pane">
+        <div class="pane-head">
+          <span>Markdown</span>
+          <span id="char-count" class="meta">0 chars</span>
+        </div>
+        <textarea id="editor" spellcheck="false" aria-label="Markdown source">## A tiny field guide
+
+Write **bold** ideas, *quiet* asides, and `inline code`.
+
+- Headings use one to three hashes
+- Lists can be ordered or unordered
+- Code fences keep their spacing
+
+> Good notes are short notes.
+
+```js
+const note = "keep it small";
+```</textarea>
+      </div>
+
+      <div class="pane">
+        <div class="pane-head">
+          <span>Preview</span>
+          <span class="meta">live</span>
+        </div>
+        <div id="preview" class="preview" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <p class="foot">
+      Try <code># Heading</code>, <code>**bold**</code>, <code>*italic*</code>,
+      <code>`code`</code>, <code>- item</code> and <code>[label](address)</code>.
+    </p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event countdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <p class="eyebrow">Time until</p>
+      <h1>Event countdown</h1>
+      <p class="lede">Name a moment, pick a date, and watch the seconds come down.</p>
+    </header>
+
+    <section class="board" aria-live="polite">
+      <p id="event-title" class="event-title">New Year</p>
+      <div class="units">
+        <div class="unit">
+          <span id="days" class="number">00</span>
+          <span class="label">days</span>
+        </div>
+        <div class="unit">
+          <span id="hours" class="number">00</span>
+          <span class="label">hours</span>
+        </div>
+        <div class="unit">
+          <span id="minutes" class="number">00</span>
+          <span class="label">minutes</span>
+        </div>
+        <div class="unit">
+          <span id="seconds" class="number">00</span>
+          <span class="label">seconds</span>
+        </div>
+      </div>
+      <p id="message" class="message">Counting down.</p>
+    </section>
+
+    <form id="countdown-form" class="controls" autocomplete="off" novalidate>
+      <label class="field" for="event-name">
+        <span>Event name</span>
+        <input id="event-name" type="text" maxlength="40" placeholder="New Year">
+      </label>
+
+      <label class="field" for="target-date">
+        <span>Date and time</span>
+        <input id="target-date" type="datetime-local" required>
+      </label>
+
+      <button id="start" class="primary" type="submit">Set countdown</button>
+      <p id="error" class="error" role="alert" hidden></p>
+    </form>
+
+    <p class="hint">The last event is saved in this browser. Times use your local time zone.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

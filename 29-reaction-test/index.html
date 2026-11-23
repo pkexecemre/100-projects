@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reaction test - five tries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">Reflex check</p>
+        <h1>Reaction test</h1>
+      </div>
+      <p class="hint">Five tries. Click the panel the instant it turns green.</p>
+    </header>
+
+    <section class="stage">
+      <button id="arena" class="arena" type="button" data-state="idle">
+        <span class="arena-kicker">Test panel</span>
+        <span id="arena-label" class="arena-label">Ready when you are</span>
+        <span id="message" class="arena-message">Click Start, then wait for green.</span>
+      </button>
+
+      <div class="actions">
+        <button id="start" class="primary" type="button">Start</button>
+        <button id="reset" class="ghost" type="button">Reset stats</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Last</span>
+          <span class="stat-value"><strong id="last">--</strong><small>ms</small></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Best</span>
+          <span class="stat-value"><strong id="best">--</strong><small>ms</small></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Average</span>
+          <span class="stat-value"><strong id="average">--</strong><small>ms</small></span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Attempts</span>
+          <span class="stat-value small"><strong id="attempts">0 / 5</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <p class="foot">Clicking before green does not count as an attempt. Reset clears all five results and starts a new round.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

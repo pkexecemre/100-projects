@@ -1,0 +1,267 @@
+:root {
+  --bg: #101010;
+  --card: #181818;
+  --line: #2d2d2a;
+  --text: #f2efe4;
+  --muted: #8c8c82;
+  --accent: #f5c542;
+  --wrong: #ff6b5e;
+  --good: #d9e8b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 48px) 16px;
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  background-image: radial-gradient(circle at 0% 0%, #23231d 0%, transparent 45%);
+}
+
+.app {
+  width: min(760px, 100%);
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.hint {
+  margin: 0 0 3px;
+  max-width: 28ch;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.card {
+  padding: clamp(18px, 4vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.stat {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #1d1d1c;
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-value strong {
+  font-size: 1.7rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-value .unit {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+#accuracy {
+  font-size: 1.45rem;
+}
+
+.passage {
+  margin: 0 0 18px;
+  color: #6f7067;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(1rem, 2.6vw, 1.16rem);
+  line-height: 1.95;
+  letter-spacing: 0.01em;
+  white-space: pre-wrap;
+}
+
+.char {
+  border-radius: 2px;
+}
+
+.char.correct {
+  color: var(--good);
+}
+
+.char.wrong {
+  color: var(--wrong);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.char.current {
+  background: var(--accent);
+  color: #151410;
+}
+
+#input {
+  display: block;
+  width: 100%;
+  min-height: 92px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  resize: vertical;
+  background: #121212;
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+#input::placeholder {
+  color: #66665f;
+}
+
+#input:focus {
+  border-color: rgba(245, 197, 66, 0.6);
+  outline: 2px solid rgba(245, 197, 66, 0.18);
+}
+
+#input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.primary {
+  flex: 0 0 auto;
+  padding: 11px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #191712;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary:hover {
+  filter: brightness(1.05);
+}
+
+.result {
+  flex: 1;
+  min-width: 220px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.result.done {
+  color: var(--good);
+}
+
+.foot {
+  margin: 14px 4px 0;
+  color: var(--muted);
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .stats {
+    gap: 6px;
+  }
+
+  .stat {
+    padding: 10px;
+  }
+
+  .stat-value strong {
+    font-size: 1.4rem;
+  }
+
+  #accuracy {
+    font-size: 1.2rem;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primary {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

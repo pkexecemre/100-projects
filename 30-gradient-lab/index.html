@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gradient Lab - CSS gradient generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">CSS generator</p>
+        <h1>Gradient Lab</h1>
+      </div>
+      <button id="randomize" class="ghost" type="button">Randomize</button>
+    </header>
+
+    <section class="workspace">
+      <div class="preview-panel">
+        <div id="preview" class="preview" role="img" aria-label="Gradient preview"></div>
+        <div class="code-row">
+          <code id="css-output" class="code">linear-gradient(135deg, #ff7a59 0%, #7c5cff 50%, #22d3ee 100%)</code>
+          <button id="copy" class="copy" type="button">Copy CSS</button>
+        </div>
+        <span id="copy-status" class="sr-only" role="status" aria-live="polite"></span>
+      </div>
+
+      <div class="controls">
+        <p class="controls-title">Color stops</p>
+
+        <div class="stops">
+          <label class="stop">
+            <span class="stop-label">Color 1</span>
+            <span class="color-box"><input id="color1" type="color" value="#ff7a59"></span>
+          </label>
+          <label class="stop">
+            <span class="stop-label">Color 2</span>
+            <span class="color-box"><input id="color2" type="color" value="#7c5cff"></span>
+          </label>
+          <label class="stop">
+            <span class="stop-label">Color 3</span>
+            <span class="color-box"><input id="color3" type="color" value="#22d3ee"></span>
+          </label>
+        </div>
+
+        <label class="toggle">
+          <input id="use-third" type="checkbox" checked>
+          <span>Use third color</span>
+        </label>
+
+        <label class="angle-head" for="angle">
+          <span>Angle</span>
+          <span class="angle-value"><output id="angle-value" for="angle">135</output> deg</span>
+        </label>
+        <input id="angle" type="range" min="0" max="360" step="1" value="135"
+               aria-label="Gradient angle in degrees">
+
+        <p class="controls-note">Three stops sit at 0, 50 and 100 percent. Turn the third color off for a two-stop blend.</p>
+      </div>
+    </section>
+
+    <p class="foot">Copy writes a ready-to-paste <code>background</code> declaration. Everything runs locally.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <p class="eyebrow">Health check</p>
+      <h1>BMI calculator</h1>
+      <p class="lede">A quick body mass index estimate with your healthy weight range.</p>
+    </header>
+
+    <section class="card">
+      <div class="switch" role="radiogroup" aria-label="Unit system">
+        <label class="seg">
+          <input type="radio" name="units" id="unit-metric" value="metric" checked>
+          <span>Metric</span>
+        </label>
+        <label class="seg">
+          <input type="radio" name="units" id="unit-imperial" value="imperial">
+          <span>Imperial</span>
+        </label>
+      </div>
+
+      <form id="bmi-form" novalidate>
+        <div class="fields">
+          <label class="field" for="height">
+            <span class="label">Height</span>
+            <span class="input-wrap">
+              <input id="height" type="number" inputmode="decimal" step="any"
+                     min="1" placeholder="175" autocomplete="off">
+              <span id="height-unit" class="unit">cm</span>
+            </span>
+          </label>
+
+          <label class="field" for="weight">
+            <span class="label">Weight</span>
+            <span class="input-wrap">
+              <input id="weight" type="number" inputmode="decimal" step="any"
+                     min="1" placeholder="70" autocomplete="off">
+              <span id="weight-unit" class="unit">kg</span>
+            </span>
+          </label>
+        </div>
+
+        <p id="error" class="error" role="alert" hidden></p>
+        <button class="primary" type="submit">Calculate BMI</button>
+      </form>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <div class="score">
+          <span id="bmi-value">0.0</span>
+          <span class="score-label">BMI</span>
+        </div>
+        <div class="summary">
+          <h2 id="bmi-category" class="badge">Normal weight</h2>
+          <p id="healthy-range" class="range"></p>
+        </div>
+        <div class="scale" aria-hidden="true">
+          <div class="scale-track">
+            <span id="scale-marker" class="marker"></span>
+          </div>
+          <div class="scale-labels">
+            <span>18.5</span>
+            <span>25</span>
+            <span>30</span>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <p class="fine">BMI is a rough screening measure. It does not distinguish muscle from fat and is not medical advice.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+:root {
+  --bg: #0f1115;
+  --panel: #16181d;
+  --panel-soft: #1b1e24;
+  --line: #2a2e37;
+  --text: #e7e9ee;
+  --muted: #8e96a5;
+  --accent: #8ab4f8;
+  --code: #f0c674;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  padding: clamp(18px, 3vw, 40px);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  background-image: radial-gradient(circle at 100% 0%, #1c2430 0%, transparent 50%);
+}
+
+.app {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.hint {
+  margin: 0 0 4px;
+  max-width: 38ch;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  height: min(64vh, 580px);
+  min-height: 320px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.pane-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.meta {
+  color: #6f7786;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+#editor {
+  flex: 1;
+  width: 100%;
+  padding: 18px;
+  border: 0;
+  resize: none;
+  background: transparent;
+  color: #d7dce5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+#editor:focus {
+  outline: 2px solid rgba(138, 180, 248, 0.55);
+  outline-offset: -3px;
+}
+
+.preview {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 22px 28px;
+  line-height: 1.65;
+  font-size: 0.94rem;
+}
+
+.preview.is-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.preview > :first-child {
+  margin-top: 0;
+}
+
+.preview h1,
+.preview h2,
+.preview h3 {
+  margin: 1.3em 0 0.45em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.preview h1 {
+  font-size: 1.7rem;
+}
+
+.preview h2 {
+  font-size: 1.35rem;
+  color: #f1f4f9;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--line);
+}
+
+.preview h3 {
+  font-size: 1.08rem;
+}
+
+.preview p {
+  margin: 0 0 0.9em;
+}
+
+.preview strong {
+  color: #ffffff;
+}
+
+.preview em {
+  color: #c8d2e2;
+}
+
+.preview a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.preview code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #22262e;
+  color: var(--code);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86em;
+}
+
+.preview pre {
+  overflow-x: auto;
+  margin: 0 0 1em;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #101216;
+}
+
+.preview pre code {
+  padding: 0;
+  background: none;
+  color: #c9d4e5;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.preview ul,
+.preview ol {
+  margin: 0 0 0.9em;
+  padding-left: 1.4em;
+}
+
+.preview li {
+  margin: 0.2em 0;
+}
+
+.preview blockquote {
+  margin: 0 0 0.9em;
+  padding: 2px 0 2px 14px;
+  border-left: 3px solid var(--accent);
+  color: #b6c0cf;
+}
+
+.preview hr {
+  margin: 1.4em 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.foot {
+  margin: 14px 2px 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+.foot code {
+  color: #aeb8c8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@media (max-width: 780px) {
+  .editor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pane {
+    height: 320px;
+  }
+}
+
+@media (max-width: 460px) {
+  body {
+    padding-inline: 14px;
+  }
+
+  .pane {
+    height: 280px;
+    border-radius: 10px;
+  }
+
+  #editor {
+    padding: 14px;
+    font-size: 0.84rem;
+  }
+
+  .preview {
+    padding: 16px;
+  }
+}

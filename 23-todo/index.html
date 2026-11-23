@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Things to do - local todo list</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <p class="eyebrow">Daily list</p>
+      <h1>Things to do</h1>
+      <p id="today" class="today"></p>
+    </header>
+
+    <form id="todo-form" class="composer" autocomplete="off">
+      <label class="sr-only" for="todo-input">New task</label>
+      <input id="todo-input" type="text" maxlength="120" required
+             placeholder="Add a task and press Enter">
+      <button class="add" type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button id="filter-all" type="button" class="active" data-filter="all"
+                aria-pressed="true">All</button>
+        <button id="filter-active" type="button" data-filter="active"
+                aria-pressed="false">Active</button>
+        <button id="filter-done" type="button" data-filter="done"
+                aria-pressed="false">Done</button>
+      </div>
+      <span id="item-count" class="count">No tasks</span>
+    </div>
+
+    <ul id="todo-list" class="list" aria-label="Tasks"></ul>
+
+    <footer class="foot">
+      <button id="clear-done" class="clear" type="button" disabled>Clear completed</button>
+      <span class="save-note">Saved in this browser</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

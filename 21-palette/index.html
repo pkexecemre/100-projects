@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Palette Pop - color palette generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">Color tool</p>
+        <h1>Palette Pop</h1>
+      </div>
+      <button id="generate-btn" class="primary" type="button">
+        New palette <kbd>space</kbd>
+      </button>
+    </header>
+
+    <p class="hint">
+      Click a swatch or its hex to copy. Lock a color to keep it through the
+      next shuffle.
+    </p>
+
+    <section id="palette" class="palette" aria-label="Generated color palette"></section>
+
+    <footer class="foot">
+      <span id="toast" class="toast" role="status" aria-live="polite"></span>
+      <span class="count">5 colors</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unit converter - length, weight, temperature</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <p class="eyebrow">Quick maths</p>
+      <h1>Unit converter</h1>
+      <p class="lede">Length, weight and temperature, converted as you type.</p>
+    </header>
+
+    <section class="card">
+      <div class="tabs" role="tablist" aria-label="Conversion category">
+        <button class="tab active" type="button" data-category="length"
+                role="tab" aria-selected="true">Length</button>
+        <button class="tab" type="button" data-category="weight"
+                role="tab" aria-selected="false">Weight</button>
+        <button class="tab" type="button" data-category="temperature"
+                role="tab" aria-selected="false">Temperature</button>
+      </div>
+
+      <div class="convert-grid">
+        <label class="field" for="input-value">
+          <span>From</span>
+          <span class="row">
+            <input id="input-value" type="number" step="any" inputmode="decimal"
+                   value="1" aria-label="Value to convert">
+            <select id="from-unit" aria-label="From unit"></select>
+          </span>
+        </label>
+
+        <button id="swap" class="swap" type="button" aria-label="Swap units">Swap</button>
+
+        <label class="field" for="output-value">
+          <span>To</span>
+          <span class="row">
+            <input id="output-value" type="text" readonly aria-label="Converted value">
+            <select id="to-unit" aria-label="To unit"></select>
+          </span>
+        </label>
+      </div>
+
+      <p id="formula" class="formula">1 meter = 3.28084 feet</p>
+    </section>
+
+    <p class="hint">Type in the left field. Changing a unit or category recalculates instantly.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
